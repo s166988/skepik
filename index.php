@@ -2,19 +2,21 @@
 // Start skrytpu
 
 // start sesji (logowanie, poziom zabezpieczeń)
-session_start();
+  session_start();
 
 // pobierz adres strony jaką mamy załadować
 // Sprawdź zmienna $_GET czy jest pusta jeśli tak to ustaw domyślną
-if (isset($_GET['strona']))
-  $strona = $_GET['strona']; else
-  $strona = "wszystkie";
+  if (isset($_GET['strona']))
+    $strona = $_GET['strona']; else
+   $strona = "wszystkie";
 
 // pobierz nazwę użytkownika z bazy jeśli zalogowany
-if (isset($_SESSION['nazwa']))
-  $nazwa = $_SESSION['nazwa']; else
-  $nazwa = null;
+  if (isset($_SESSION['nazwa']))
+    $nazwa = $_SESSION['nazwa']; else
+    $nazwa = null;
 
+// Łączenie z bazą danych
+  require "baza.php";
 
 ?>
 <html>
@@ -72,14 +74,16 @@ if (isset($_SESSION['nazwa']))
       <div id="content">
         <?php
           // Ładuj jakąś konkretną stronę 
-
           include $strona.'.php';
         ?>
 
       </div>
     </div>
     <div id="footer">
-      <p>Copyright &copy; 2015 - Andrzej Kinzerski | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.mysql.com/">MYSQL</a></p>
+      <p>Copyright &copy; 2015 - Andrzej Kinzerski | 
+      <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | 
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | 
+      <a href="http://www.mysql.com/">MYSQL</a></p>
     </div>
   </div>
 </body>
