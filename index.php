@@ -49,7 +49,7 @@
             echo '<li><a href="wyloguj.php">Wyloguj</a></li>';
           } else {
             echo '<li><a href="index.php?strona=rejestracja">Rejestracja</a></li>';
-            echo '<li><a href="zaloguj.php">Zaloguj</a></li>';
+            echo '<li><a href="index.php?strona=zaloguj">Zaloguj</a></li>';
           }
           ?>
           <li><a href="index.php?strona=zamowienia">Zamówienia</a></li>

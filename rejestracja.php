@@ -23,12 +23,13 @@ if (isset($_POST['name'])
 	} else {
 
 	// jeśli nie ma takiego użytkownika to dodaj go do bazy
-	$sql = $baza->prepare("INSERT INTO `uzytkownicy` VALUES (NULL,?,?,?);");
+	// standardowe prawa to 0 = zwykły użytkownik
+	$sql = $baza->prepare("INSERT INTO `uzytkownicy` VALUES (NULL,?,?,?,0);");
 	$sql->execute(array($nazwa, $haslo, $email));
 
 
 	// przekieruj do strony logowania
-	header('Location: index.php?page=zaloguj');
+	header('Location: index.php?strona=zaloguj');
 
 	// zakoncz skrypt
 	die();
@@ -46,7 +47,7 @@ if (isset($_POST['name'])
     <p><span>Email</span><input type="email" name="email" value="" required/></p>
 
     <p style="padding-top: 15px"><span>&nbsp;</span>
-    <input class="submit" type="submit" name="name" value="button" /></p>
+    <input class="submit" type="submit" value="Zarejestruj" /></p>
   </div>
 </form>
 
