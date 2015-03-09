@@ -15,6 +15,8 @@
     $nazwa = $_SESSION['nazwa']; else
     $nazwa = null;
 
+// odczyt praw potrzebny do stron: zamowienia i dodaj.php
+  $prawa = $_SESSION['prawa'];
 // Łączenie z bazą danych
   require "baza.php";
 
@@ -32,7 +34,7 @@
   <div id="main">
     <div id="header">
       <div id="logo">
-        <h1>Filmik.NET<a href=#>Najtaniej w sieci!</a></h1>
+        <h1>Filmik.NET<a href=/>Najtaniej w sieci!</a></h1>
         <div class="slogan"><a>
         <?=
         // Jeśli nazwa uzytkownika jest ustwiona to pokaże nazwę użytkownika
