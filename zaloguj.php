@@ -23,7 +23,8 @@ if (isset($_POST['name'])
 		// ustawiamy dane sesji (odczytujemy z bazy danych)
 		$_SESSION['prawa'] = $rekord['prawa'];
 		$_SESSION['nazwa'] = $rekord['nazwa'];
-
+		//id użytkownika
+		$_SESSION['id'] = $rekord['id'];
 		// jeśli pomyślnie zalogowano
 		// przekieruj do strony głównej
 		header('Location: index.php');

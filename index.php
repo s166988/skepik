@@ -11,12 +11,14 @@
    $strona = "wszystkie";
 
 // pobierz nazwę użytkownika z bazy jeśli zalogowany
-  if (isset($_SESSION['nazwa']))
-    $nazwa = $_SESSION['nazwa']; else
+  if (isset($_SESSION['nazwa'])){
+    // odczyt praw potrzebny do stron: zamowienia i dodaj.php
+    $prawa = $_SESSION['prawa'];
+    $nazwa = $_SESSION['nazwa']; }else{
     $nazwa = null;
+    $prawa = 0;
+}
 
-// odczyt praw potrzebny do stron: zamowienia i dodaj.php
-  $prawa = $_SESSION['prawa'];
 // Łączenie z bazą danych
   require "baza.php";
 
@@ -38,7 +40,7 @@
         <div class="slogan"><a>
         <?=
         // Jeśli nazwa uzytkownika jest ustwiona to pokaże nazwę użytkownika
-          $nazwa?$nazwa:"Niezalogowany"
+          $nazwa?"Witaj, ".$nazwa:"Niezalogowany"
         ?></a></div>
       </div>
       <div id="menubar">
