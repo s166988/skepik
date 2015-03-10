@@ -26,7 +26,7 @@ if (isset($_POST['tytul'])
 	$sql->execute(array($tytul, $opis, $url, $cena));
 
 	// wyswietl info że dodano film
-	echo '<div><h1 style="color:lime">Dodałeś film!</h1></div>';
+	echo '<div><h1 style="color:lime">Dodałes film!</h1></div>';
 	
 }	
 // pokaz standardowy formularz
