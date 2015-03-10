@@ -29,7 +29,7 @@
 
 	// Wyświetl informacje o zakupie
 ?>
-<h1 style="color:lime">Kupiłes film!</h1>
+<h1 style="color:lime">Kupiłes film!<span style="color:red"><i>wersja beta</i></span></h1>
   <div style="min-height:245px;">
     <h2>Film: <?=$film['tytul']?>, <?=$film['cena']?></h2>
     <p>Użytkownik: <?=$nazwa?></p>
