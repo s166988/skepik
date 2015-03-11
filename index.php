@@ -36,7 +36,7 @@
   <div id="main">
     <div id="header">
       <div id="logo">
-        <h1>Filmik.NET<a href=/>Najtaniej w sieci!</a></h1>
+        <h1>Filmik.NET<a href="index.php">Najtaniej w sieci!</a></h1>
         <div class="slogan"><a>
         <?=
         // Jeśli nazwa uzytkownika jest ustwiona to pokaże nazwę użytkownika
